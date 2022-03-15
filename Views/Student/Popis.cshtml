@@ -1,0 +1,29 @@
+﻿@using Projektt.Models
+@model StudentiDB
+@{
+    ViewBag.Title = "Popis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Popis</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Oib</th>
+        <th>Detalji</th>
+    </tr>
+   
+
+    foreach(var student in Model.VratiListu())
+    {
+    <tr>
+        <th>student.ID</th>
+        <th>student.Ime</th>
+        <th>student.Prezime</th>
+        <th>student.Oib</th>
+        <th>student.ActionLink("Info","Detalji",new(id=student.ID))</th>
+    </tr>
+    }
+</table>
